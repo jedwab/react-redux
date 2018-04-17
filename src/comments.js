@@ -1,4 +1,11 @@
-import { ADD_COMMENT, REMOVE_COMMENT, EDIT_COMMENT, THUMB_UP_COMMENT, THUMB_DOWN_COMMENT } from './actions';
+
+import { 
+	ADD_COMMENT, 
+	REMOVE_COMMENT, 
+	EDIT_COMMENT, 
+	THUMB_UP_COMMENT, 
+	THUMB_DOWN_COMMENT 
+} from './actions';
 
 function comments(state = [], action) {
 	switch(action.type) {
@@ -14,7 +21,7 @@ function comments(state = [], action) {
 		case EDIT_COMMENT:
 			return state.map(comment => {
 			  	if(comment.id === action.id) {
-					return {...comment, text: action.text}
+					return {...comment, text: action.content}
 			  	}
 			  	return comment;
 			});
